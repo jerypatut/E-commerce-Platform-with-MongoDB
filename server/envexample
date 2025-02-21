@@ -1,0 +1,8 @@
+sebelum running kamu paste contoh file ini ke .env kamu
+MONGO_URL=linkmongodbatlas
+JWT_SECRET =jwt-secret
+JWT_LIFETIME = 1d
+EMAIL_USER=EMAIL_PASS
+EMAIL_PASS=apppassword
+EMAIL_SERVICE=gmail
+EMAIL_SECURE=true
