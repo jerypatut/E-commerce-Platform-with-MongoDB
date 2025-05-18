@@ -61,7 +61,7 @@ cd project-directory
 
 ```bash
 # Install backend dependencies
-cd server
+cd backend
 npm install
 
 # Install frontend dependencies
@@ -91,8 +91,8 @@ REACT_APP_API_URL=http://localhost:5000
 ### 4. Run the Application
 
 ```bash
-# Start the server
-cd server
+# Start the backend
+cd backend
 npm start
 
 # Start the frontend

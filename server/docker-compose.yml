@@ -1,0 +1,36 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-container
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+    networks:
+      - app-network
+
+  express:
+    build:
+      context: .
+    container_name: express-container
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    env_file:
+      - .env
+    environment:
+      - MONGO_URI=${MONGO_URI}
+    networks:
+      - app-network
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge
